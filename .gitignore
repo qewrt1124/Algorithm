@@ -1,6 +1,8 @@
-
 # ignore all .out files
 *.out
+
+# ignore all .exe files
+*.exe
 
 # ignore .editorconfig files
 *.editorconfig
