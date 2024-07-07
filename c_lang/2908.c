@@ -1,21 +1,21 @@
 #include <stdio.h>
-#include <string.h>
 
 int main() {
     char num[4];
-    int changed_num[2];
+    int changed_num[2] = { 0 };
 
-    for(int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++) {
         scanf("%s", num);
-        int k = 100;
-        for(int j = strlen(num) - 1; j > -1; j--, k /= 10) {
-            changed_num[i] += (num[i] - 48) * k;
+        for (int j = 0, k = 1; j < 3; j++, k *= 10) {
+            changed_num[i] += ((num[j] - 48) * k);
         }
     }
 
-    if(changed_num[0] > changed_num[1]) {
+    if (changed_num[0] > changed_num[1]) {
         printf("%d", changed_num[0]);
-        return 0;
     }
-    printf("%d", changed_num[1]);
+    else {
+        printf("%d", changed_num[1]);
+    }
+    return 0;
 }
